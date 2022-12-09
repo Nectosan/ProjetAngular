@@ -1,0 +1,61 @@
+<div *ngIf="total==0">
+    Your cart is empty
+</div>
+
+<div *ngIf="total!=0">
+<div class="container">
+    <div class="row ">
+      <div class="col-md-2">
+       Product
+      </div>
+      <div class="col-md-1">Picture 
+      </div>
+      <div class="col-md-1">
+        Specifications
+      </div>
+      <div class="col-md-1">
+        Quantity
+      </div>
+      <div class="col-md-2">
+        Price
+      </div>
+    </div>
+ 
+
+    <div *ngFor="let obj of cart | keyvalue" class="col">
+
+        <div class="row h-100">
+            <div class="col-sm ">
+                <product-cart [obj]="obj"></product-cart>
+            </div>
+            <div class="col-sm  my-auto">
+                <button (click)="add(obj)" class="btn btn-primary">+</button>
+                <button (click)="delete(obj)" class="btn btn-primary">-</button>
+            </div>
+        </div>
+        <br/>
+
+    </div>
+</div>
+
+<h3>Your order</h3>
+
+<div class="card" style="width: 18rem;">
+    <div *ngFor="let obj of cart | keyvalue">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <order [obj]="obj"> </order>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div style=" margin-top: 1rem;
+width:300px;
+margin-bottom: 1rem;
+border: 0;
+border-top: 1px solid black;"></div>
+
+Total = {{total}} $
+
+</div>

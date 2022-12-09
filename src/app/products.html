@@ -1,0 +1,13 @@
+
+<h5 class="card-title">{{obj.name}}</h5>
+<img src={{obj.picture}} height="200px"/>
+
+<p class="card-text" style="margin-bottom : 0">{{obj.specifications.price}}</p>
+<p class="card-text" style="margin-bottom : 0">{{obj.specifications.color}}</p>
+<p class="card-text" style="margin-bottom : 0">{{obj.specifications.weight}}</p>
+<p class="card-text" style="margin-bottom : 0">{{obj.specifications.storage}}</p>
+
+ <button (click)="add(obj)" (mouseover)="valueChanged()" (mouseout)="valueReset()" id="add" class="btn btn-primary">Add to cart</button>
+        
+
+      

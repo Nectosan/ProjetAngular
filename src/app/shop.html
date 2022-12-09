@@ -1,0 +1,32 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+      
+      </div>
+      <div class="col-sm">
+        <h1 >    {{name}} </h1>
+      </div>
+      <div class="col-sm">
+       
+      </div>
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+    <div *ngFor="let obj of products " class="col">
+    
+        <div class="card">
+          <div class="card-body">
+            <products-details [obj]="obj" (valueChange)='displayCounter($event)'></products-details>
+          </div>
+        </div>
+      
+    </div>
+    
+    </div>
+
+    
+     
